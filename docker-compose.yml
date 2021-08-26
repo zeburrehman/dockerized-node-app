@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  node-app:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    ports: 
+      - 4000:5000
+      - 4229:9229
+    volumes: 
+      - node-app-modules:/home/app/dockerized-node/node_modules
+      - .:/home/app/dockerized-node
+volumes: 
+  node-app-modules:
